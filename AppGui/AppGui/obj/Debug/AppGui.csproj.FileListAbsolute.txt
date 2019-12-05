@@ -169,3 +169,6 @@ C:\Users\Carlos Soares\Desktop\IM\IM_Assignment1\Basis4Assignment2\AppGui\AppGui
 C:\Users\Carlos Soares\Desktop\IM\IM_Assignment1\Basis4Assignment2\AppGui\AppGui\obj\Debug\AppGui.pdb
 C:\Users\ruigr\Desktop\Universidade\IM\2º Trabalho\IM_Assignment1\Basis4Assignment2\AppGui\AppGui\bin\Debug\WindowsInput.dll
 C:\Users\ruigr\Desktop\Universidade\IM\2º Trabalho\IM_Assignment1\Basis4Assignment2\AppGui\AppGui\bin\Debug\WindowsInput.xml
+C:\Users\ruigr\Desktop\Universidade\IM\3º Trabalho\AppGui\AppGui\bin\Debug\AppGui.exe.config
+C:\Users\ruigr\Desktop\Universidade\IM\3º Trabalho\AppGui\AppGui\obj\Debug\AppGui.exe
+C:\Users\ruigr\Desktop\Universidade\IM\3º Trabalho\AppGui\AppGui\obj\Debug\AppGui.pdb
