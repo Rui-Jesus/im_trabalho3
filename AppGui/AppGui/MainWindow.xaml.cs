@@ -70,38 +70,79 @@ namespace AppGui
             
             switch (commandID)
             {
-                case "0":
-                    //smth
+                case "0": //Close tab
+                    tabs = driver.WindowHandles.ToList();
+                    if (tabs.Count() > 1)
+                    {
+                        driver.Close();
+                        driver.SwitchTo().Window(driver.WindowHandles.First());
+                    }
                     break;
-                case "1":
+
+                case "1": //Historic
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_D);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_H);
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                    System.Threading.Thread.Sleep(100);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+                    driver.SwitchTo().Window(driver.WindowHandles.Last());
                     break;
                     
-                case "2":
-                   
-                    driver.Manage().Window.Minimize();
-                    break;
-                    
-                case "3":
+                case "2": //Maximize
                     driver.Manage().Window.Maximize();
                     break;
+
+                case "3": //Minimize
+                    driver.Manage().Window.Minimize();
+                    break;
+
+                case "4": //Open Tab
+                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_T);
+                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    driver.SwitchTo().Window(driver.WindowHandles.Last());
+                    break;
                     
-                case "4":
+                case "5": //Scroll down
+                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.NEXT);
+                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    break;
+
+                case "6": //Scroll up
+                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.PRIOR);
+                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    break;
+                    
+                case "7": //Zoom in
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     sim.Keyboard.KeyPress(VirtualKeyCode.OEM_PLUS);
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                    break;
                     
-                case "5":
+                    break;
+                case "8": //Zoom out
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     sim.Keyboard.KeyPress(VirtualKeyCode.OEM_MINUS);
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    
                     break;
-                case "6":
+                case "9": //Próxima tab
+                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
+                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    //Console.WriteLine(tabs.ToString());
+                    tabs = driver.WindowHandles.ToList();
+                    int index2 = tabs.IndexOf(driver.CurrentWindowHandle);
+                    if (index2 == tabs.Count() - 1)
+                    {
+                        driver.SwitchTo().Window(driver.WindowHandles.First());
+                    }
+                    else
+                    {
+                        driver.SwitchTo().Window(tabs[index2 + 1]);
+                    }
+                    break;
+
+                case "10": //tab anterior
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     sim.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
                     sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
@@ -118,61 +159,30 @@ namespace AppGui
                         driver.SwitchTo().Window(tabs[index1 - 1]);
                     }
                     break;
-                case "7":
+
+                case "11": //adicionar favoritos
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_D);
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                    //Console.WriteLine(tabs.ToString());
-                    tabs = driver.WindowHandles.ToList();
-                    int index2 = tabs.IndexOf(driver.CurrentWindowHandle);
-                    if (index2 == tabs.Count() - 1)
-                    {
-                        driver.SwitchTo().Window(driver.WindowHandles.First());
-                    }
-                    else
-                    {
-                        driver.SwitchTo().Window(tabs[index2 + 1]);
-                    }
-
-
+                    System.Threading.Thread.Sleep(100);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
                     break;
-                case "8":
 
-                    tabs = driver.WindowHandles.ToList();
-                    if (tabs.Count() > 1)
-                    {
-                        driver.Close();
-                        driver.SwitchTo().Window(driver.WindowHandles.First());
-                    }
-
-                    break;
-                case "9":
-                    string rec1 = "";
-                    switch (rec1)
-                    {
-                        case "tab":
-                            sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                            sim.Keyboard.KeyPress(VirtualKeyCode.VK_T);
-                            sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                            driver.SwitchTo().Window(driver.WindowHandles.Last());
-                            break;
-
-                        case "historic":
-                            sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                            sim.Keyboard.KeyPress(VirtualKeyCode.VK_H);
-                            sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                            driver.SwitchTo().Window(driver.WindowHandles.Last());
-                            break;
-                        case "favourites":
-                            sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                            sim.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
-                            sim.Keyboard.KeyPress(VirtualKeyCode.VK_O);
-                            sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                            sim.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
-                            break;
-                    }
-                    break;
             }
+
+            /*
+             
+                -- visit favs
+                case "favourites":
+                sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                sim.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
+                sim.Keyboard.KeyPress(VirtualKeyCode.VK_O);
+                sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                sim.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
+                break;
+
+             
+             */
 
 
         }
