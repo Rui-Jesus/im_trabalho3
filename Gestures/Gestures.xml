@@ -2,7 +2,47 @@
 <Gestures>
   <Gesture>
     <ID>0</ID>
-    <NAME>mkmkProgress_Right</NAME>
-    <SEMANTIC>mkmkPR</SEMANTIC>
+    <NAME>CloseTab</NAME>
+    <SEMANTIC>CloseT</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>1</ID>
+    <NAME>Historic</NAME>
+    <SEMANTIC>Historic</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>2</ID>
+    <NAME>Maximize</NAME>
+    <SEMANTIC>Maximize</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>3</ID>
+    <NAME>Minimize</NAME>
+    <SEMANTIC>Minimize</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>4</ID>
+    <NAME>OpenTab</NAME>
+    <SEMANTIC>OpenT</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>5</ID>
+    <NAME>ScrollDown</NAME>
+    <SEMANTIC>ScrollD</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>6</ID>
+    <NAME>ScrollUP</NAME>
+    <SEMANTIC>ScrollUP</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>7</ID>
+    <NAME>ZoomIn</NAME>
+    <SEMANTIC>ZoomI</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>8</ID>
+    <NAME>ZoomOut</NAME>
+    <SEMANTIC>ZoomO</SEMANTIC>
   </Gesture>
 </Gestures>

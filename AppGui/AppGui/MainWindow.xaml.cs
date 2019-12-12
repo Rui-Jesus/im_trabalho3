@@ -102,15 +102,11 @@ namespace AppGui
                     break;
                     
                 case "5": //Scroll down
-                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     sim.Keyboard.KeyPress(VirtualKeyCode.NEXT);
-                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
                     break;
 
                 case "6": //Scroll up
-                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     sim.Keyboard.KeyPress(VirtualKeyCode.PRIOR);
-                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
                     break;
                     
                 case "7": //Zoom in
